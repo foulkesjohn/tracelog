@@ -25,16 +25,14 @@ let package = Package(
     targets: [
         /// Module targets
         .target(name: "TraceLog",            dependencies: [],           path: "Sources/TraceLog"),
-        .target(name: "TraceLogTestHarness", dependencies: ["TraceLog"], path: "Sources/TraceLogTestHarness"),
 
         /// Tests
-        .testTarget(name: "TraceLogTests",            dependencies: ["TraceLog", "TraceLogTestHarness"], path: "Tests/TraceLogTests"),
-        .testTarget(name: "TraceLogTestHarnessTests", dependencies: ["TraceLog", "TraceLogTestHarness"], path: "Tests/TraceLogTestHarnessTests")
+        .testTarget(name: "TraceLogTests",            dependencies: ["TraceLog"], path: "Tests/TraceLogTests"),
     ],
     swiftLanguageVersions: [4]
 )
 
-var productTargets = ["TraceLog", "TraceLogTestHarness"]
+var productTargets = ["TraceLog"]
 
 ///
 /// These platforms can also support Objective-C so we create a module for it.
